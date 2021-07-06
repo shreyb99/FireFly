@@ -1,22 +1,24 @@
-Algorithm 1 Setting Environment and Data Collection
+Algorithm 1 - Setting Environment and Data Collection
+
 Input: IP address, Path to CSV File, Text Input, Various Parameters 
 If not installed, gpsd installation; sudo apt install gpsd gpsd-clients then
     Start gpsd; gpsd –N tcp://<ip address with port>
-    If Checking if gpsd works by using gpsmon; gpsmon Or Checking incoming gps data; curl                        -http0.9<ip address with port> then
+    If Checking if gpsd works by using gpsmon; gpsmon Or Checking incoming gps data; curl -http0.9<ip address with port> then
         Iwconfig to get NIC status and check for managed mode; iwconfig 
         Entering Monitor Mode; sudo airmon-ng start <adapter name>
                If checking if entered monitor mode successfully; iwconfig then
-       Start Sniffing and Creation of CSV files; sudo airodump-ng –gpsd –w <path of csv file> --                  write-interval 5 <adapter name>
-Else 
-      Print ‘Not in Monitor Mode’
-End if
-      Else 
+       		   Start Sniffing and Creation of CSV files; sudo airodump-ng –gpsd –w <path of csv file> -- write-interval 5 <adapter name>
+    	       Else 
+      		   Print ‘Not in Monitor Mode’
+    	       End if
+    Else
 	Print ‘Error fetching gps coordinates’
-      End if
+    End if
 Else 
-      Print ‘Error installing gpsd’
+    Print ‘Error installing gpsd’
 
-Algorithm 2 Performing Various Attacks
+Algorithm 2 - Beacon and Deauthentication Attacks
+
 Input: User Input, Target IP Address, Various Attack Parameters
 While input!=0:
 If input==1 then //deauth attack
@@ -36,9 +38,8 @@ If input==2 then //beacon attack
     Dictionary file with SSID names is created with data; <file-name>.txt
     Transmitting beacons frames using mdf3 tool; mdk3 <interface-name> b –a –g –f <filename.txt>
 
+Algorithm 3 - Rogue Access Point
 
-
-Algorithm 3 Rogue Access Point
 Input: Text Input, Target BSSID, ESSID, Various Parameters
 Retrieving Wi-Fi card details; iwconfig
 Entering Monitor Mode; airmon-ng start <adapter-name>
